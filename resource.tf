@@ -1,9 +1,9 @@
 resource "google_compute_instance" "default" {
+	count = 2
 	name = "jenkins-${count.index+1}"
 	machine_type = "n1-standard-1"
 	zone = "europe-west2-c"
 	tags = ["jenkins"]
-	count = 2
 	boot_disk {
 		initialize_params {
 			image = "centos-7"
